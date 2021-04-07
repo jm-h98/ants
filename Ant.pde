@@ -113,8 +113,10 @@ class Ant {
     PVector steering = new PVector();
     if(hasFood){
       float d = base.dist(this.position);
-      if(d < 25)
+      if(d < 25){
         hasFood = false;
+        foodStorage++;
+      }
       steering.add(base.sub(this.position));
       steering.setMag(maxSpeed);
       steering.sub(this.velocity);
